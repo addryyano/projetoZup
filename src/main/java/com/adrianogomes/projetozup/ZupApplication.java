@@ -21,7 +21,7 @@ import com.adrianogomes.projetozup.repositories.EstadoRepository;
 import com.adrianogomes.projetozup.repositories.ProdutoRepository;
 
 @SpringBootApplication
-public class CursomcApplication implements CommandLineRunner {
+public class ZupApplication implements CommandLineRunner {
 	
 	@Autowired
 	private CategoriaRepository categoriaRepository;
@@ -37,13 +37,13 @@ public class CursomcApplication implements CommandLineRunner {
 	private EnderecoRepository enderecoRepository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(CursomcApplication.class, args);
+		SpringApplication.run(ZupApplication.class, args);
 	}
 
 	@Override
 	public void run(String...args) throws Exception {
-		Categoria cat1 = new Categoria(null, "Informatica");
-		Categoria cat2 = new Categoria(null, "Escritorio");
+		Categoria cat1 = new Categoria(null, "Informatica", "01");
+		Categoria cat2 = new Categoria(null, "Escritorio", "02");
 		
 		Produto p1 = new Produto(null, "Computador", 2000.00);
 		Produto p2 = new Produto(null, "Impressora", 800.00);
@@ -69,7 +69,7 @@ public class CursomcApplication implements CommandLineRunner {
 		estadoRepository.saveAll(Arrays.asList(est1, est2));
 		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
 		
-		Usuario user1 = new Usuario(null, "Maria Silva", "maria@emailteste.com", "36378912377", "21/12/1980");
+		Usuario user1 = new Usuario(null, "Maria Silva", "maria@emailteste.com", "36378912377", "21/03/1986");
 		user1.getTelefones().addAll(Arrays.asList("1999887766", "1199775533"));
 		
 		Endereco e1 = new Endereco(null, "Rua Flores Melo", "300", "Ap102", "Jardim Nevada", "3132322323", user1, c1);

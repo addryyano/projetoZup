@@ -11,7 +11,7 @@ import com.adrianogomes.projetozup.domain.Usuario;
 import com.adrianogomes.projetozup.services.UsuarioService;
 
 @RestController
-@RequestMapping(value="/clientes")
+@RequestMapping(value="/usuarios")
 public class UsuarioResource {
 	
 	@Autowired

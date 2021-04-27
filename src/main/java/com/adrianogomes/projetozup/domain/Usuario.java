@@ -26,7 +26,7 @@ public class Usuario implements Serializable {
 	private String nome;
 	private String email;
 	private String cpf;
-	private String dN;
+	private String nascimento;
 		
 	@JsonManagedReference
 	@OneToMany(mappedBy="usuario")
@@ -40,13 +40,13 @@ public class Usuario implements Serializable {
 		
 	}
 
-	public Usuario(Integer id, String nome, String email, String cpf, String dN) {
+	public Usuario(Integer id, String nome, String email, String cpf, String nascimento) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.cpf = cpf;
-		this.dN = dN;
+		this.nascimento = nascimento;
 	}
 
 	public Integer getId() {
@@ -80,7 +80,16 @@ public class Usuario implements Serializable {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+	
+	public String getNascimento() {
+		return nascimento;
+	}
 
+	public void setNascimento(String nascimento) {
+		this.nascimento = nascimento;
+	}
+	
+	
 	public List<Endereco> getEnderecos() {
 		return enderecos;
 	}
@@ -97,15 +106,6 @@ public class Usuario implements Serializable {
 		this.telefones = telefones;
 	}
 			
-	public String getDnascimento() {
-		return dN;
-	}
-	
-	public void setDnascimento(String dN) {
-		this.dN = dN;
-	}
-	
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -130,4 +130,6 @@ public class Usuario implements Serializable {
 			return false;
 		return true;
 	}
+
+	
 }

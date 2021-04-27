@@ -20,6 +20,7 @@ public class Categoria implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
+	private String qtd;
 	
 	@JsonManagedReference
 	@ManyToMany(mappedBy="categorias")
@@ -28,10 +29,11 @@ public class Categoria implements Serializable{
 	public Categoria() {		
 	}
 	
-	public Categoria(Integer id, String nome) {
+	public Categoria(Integer id, String nome, String qtd) {
 		super();
 		this.id = id;
 		this.nome = nome;
+		this.qtd = qtd;
 	}
 	
 	public Integer getId() {
@@ -81,6 +83,14 @@ public class Categoria implements Serializable{
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	public String getQtd() {
+		return qtd;
+	}
+
+	public void setQtd(String qtd) {
+		this.qtd = qtd;
 	}
 		
 }
