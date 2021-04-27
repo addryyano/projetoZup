@@ -76,8 +76,15 @@ public class ZupApplication implements CommandLineRunner {
 		Endereco e2 = new Endereco(null, "Avenida Bento Dias", "1001", "Sala 21", "Centro", "1921122112", user1, c2);
 		user1.getEnderecos().addAll(Arrays.asList(e1, e2));
 		
-		usuarioRepository.saveAll(Arrays.asList(user1));
-		enderecoRepository.saveAll(Arrays.asList(e1, e2));
+		Usuario user2 = new Usuario(null, "Antonio Couto Belmin", "tonibelmin@emailteste.com", "46140456933", "02/11/1967");
+		user2.getTelefones().addAll(Arrays.asList("1999007769", "11997755110"));
+		
+		Endereco e3 = new Endereco(null, "Rua Getulio Prestes", "235", "casa", "Jardim Ourinhos", "3132322323", user2, c1);
+		
+		user1.getEnderecos().addAll(Arrays.asList(e1, e2));
+		
+		usuarioRepository.saveAll(Arrays.asList(user1, user2));
+		enderecoRepository.saveAll(Arrays.asList(e1, e2, e3));
 		
 	}
 }
